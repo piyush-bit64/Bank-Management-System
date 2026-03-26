@@ -1,8 +1,10 @@
 Bank Management System
+
 A robust Python-based banking application that interfaces with a MySQL database to handle core financial operations, user authentication, and account management.
 
 
 **Features
+
 1.Secure Authentication: Integrated login and registration system with unique account number generation.
 
 2.Core Banking: Deposit, withdraw, and check real-time balances.
@@ -32,6 +34,7 @@ A robust Python-based banking application that interfaces with a MySQL database 
 Before running the code, you need to create the database and tables in MySQL. Run the following commands in your MySQL workbench:
 
 SQL
+
 CREATE DATABASE bank_management_cse;
 USE bank_management_cse;
 
@@ -49,6 +52,7 @@ CREATE TABLE accounts (
 );
 
 -- Transactions Table
+
 CREATE TABLE transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     account_no INT,
@@ -59,7 +63,9 @@ CREATE TABLE transactions (
     FOREIGN KEY (account_no) REFERENCES accounts(account_no)
 );
 
+
 2. Configuration
+
 Update the database connection details in main.py, basic_features.py, and login_register.py to match your local MySQL credentials:
 cn = mysql.connect(host="localhost", user="root", password="your_password", database="bank_management_cse")
 
