@@ -61,8 +61,6 @@ CREATE TABLE transactions (
 
 2. Configuration
 Update the database connection details in main.py, basic_features.py, and login_register.py to match your local MySQL credentials:
-
-# Change these lines in your files:
 cn = mysql.connect(host="localhost", user="root", password="your_password", database="bank_management_cse")
 
 3. Execution
