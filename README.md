@@ -36,31 +36,51 @@ Before running the code, you need to create the database and tables in MySQL. Ru
 SQL
 
 CREATE DATABASE bank_management_cse;
+
 USE bank_management_cse;
 
 -- Basic Accounts Table
+
 CREATE TABLE accounts (
+    
     account_no INT PRIMARY KEY,
+    
     name VARCHAR(100),
+    
     dob DATE,
+    
     phone VARCHAR(15),
+    
     email VARCHAR(100),
+    
     account_type VARCHAR(20),
+    
     pin VARCHAR(10),
+    
     balance FLOAT DEFAULT 0.0,
+    
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
 );
 
 -- Transactions Table
 
 CREATE TABLE transactions (
+    
     id INT AUTO_INCREMENT PRIMARY KEY,
+    
     account_no INT,
+    
     type VARCHAR(20),
+    
     amount FLOAT,
+    
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
     flag VARCHAR(20) DEFAULT 'OK',
+    
     FOREIGN KEY (account_no) REFERENCES accounts(account_no)
+
 );
 
 
